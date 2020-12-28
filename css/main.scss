@@ -1,0 +1,37 @@
+.signature-wrapper {
+    visibility: hidden;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 2px solid #444444;
+  }
+  
+  .signature-pad {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+  }
+  
+  #signatureSaveButton{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  #signatureClearButton{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  
+  
+  bank-data-container{
+    width: 100px;
+  
+  }
