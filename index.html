@@ -14,61 +14,71 @@
 
 <body>
 
-    <h1>Golden-minutes</h1>
-    <h4>פשוט להציל חיים</h2>
-        <h2 class="phone-number">037791101</h2>
-        <h4>www.golden-minutes.com</h2>
+    <section>
 
-            <h5 class="title">בקשה להקמת הרשאה לחיוב חשבון</h3>
-
-
-                <div class="bank-data-container">
-
-                    <div>
-                        <div class="input-group input-group-sm mb-3 ">
-                            <input type="text" class="form-control" aria-label="Small"
-                                aria-describedby="inputGroup-sizing-sm">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">בנק</span>
-                            </div>
-                        </div>
-                        <div class="input-group input-group-sm mb-3 ">
-                            <input type="text" class="form-control" aria-label="Small"
-                                aria-describedby="inputGroup-sizing-sm">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">סניף</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        
-                    </div>
-
+        <div class="contactForm">
+            <div class="formBox">
+                <h2>Client Data Form</h2>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>First Name</span>
+                </div>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>Last Name</span>
+                </div>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>Identification Number</span>
                 </div>
 
-
-
-                <label for="inputName"></label>
-                <input type="text" name="inputName" id="inputName">
-
-                <div>
-                    <button class="btn btn-success btn-sm open-signature-pad" id="openSignaturePad">Add
-                        e-signature</button>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>Bank Name</span>
                 </div>
-
-                <div class="signature-form">
-                    <div class="signature-wrapper" id="signature-wrapper">
-                        <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
-                    </div>
-                    <div>
-                        <button class="btn btn-success btn-sm" id="signatureSaveButton">Save</button>
-                        <button class="btn btn-success btn-sm" id="signatureClearButton">Clear</button>
-                    </div>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>Bank Number</span>
                 </div>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>Bank Branch</span>
+                </div>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>Account Number</span>
+                </div>
+                <div class="inputBox w50">
+                    <input type="text" name="" required>
+                    <span>Last Name</span>
+                </div>
+            </div>
+        </div>
 
-                <button class="btn btn-success btn-sm" id="submit">Send form.</button>
+    </section>
 
-                <script src="script.js"></script>
+
+
+    <div class="signature-input-form">
+        <div>
+            <button class="btn btn-success btn-sm open-signature-pad" id="openSignaturePad">Add
+                e-signature</button>
+        </div>
+
+        <div class="signature-form">
+            <div class="signature-wrapper" id="signature-wrapper">
+                <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+            </div>
+            <div>
+                <button class="btn btn-success btn-sm" id="signatureSaveButton">Save</button>
+                <button class="btn btn-success btn-sm" id="signatureClearButton">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-success btn-sm" id="submit">Send form.</button>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
