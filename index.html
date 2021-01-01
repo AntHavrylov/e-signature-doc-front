@@ -10,73 +10,123 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+        integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.nl.min.js"></script>
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css"
+        rel="stylesheet" />
+
+
 </head>
 
 <body>
 
     <section>
-
         <div class="contactForm">
             <div class="formBox">
-                <h2>Client Data Form</h2>
+
+                <h1>Client Data Form</h1>
                 <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>First Name</span>
+                    <input class="inputw50" type="text" name="" id="fullNameInput" required>
+                    <span class="spanw50">Full Name</span>
                 </div>
                 <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Last Name</span>
+                    <input class="inputw50" type="text" name="" id="idNumberInput" required>
+                    <span class="spanw50">Identification Number</span>
                 </div>
                 <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Identification Number</span>
+                    <input class="inputw50" type="text" name="" id="moneyAmountInput" required>
+                    <span class="spanw50">Money Amount</span>
+                </div>
+                <div class="input-group date inputBox w50" data-provide="datepicker">
+                    <input class="inputw50 w50" type="text" class="form-control" id="datepickerInput" required>
+                    <div class="input-group-addon"></div>
+                    <span class="spanw50 datetime-spawn">Date Time</span>
+                </div>
+                <div class="bank-input-box">
+                    <span class="selected-bank" id="SelectedBank"><img class="selected-bank-img"
+                            src="assets/bank-logo/bankLogo.jpg" width="32px" height="32px" />Select your Bank</span>
+                    <div class="bank-select-box" id="SelectBankBox">
+                        <ul class="bank-list">
+                            <li class="BankHapoalim" id="BankHapoalim"><a><img src="/assets/bank-logo/hapoalim.png"
+                                        width="32px" height="auto" />Hapoalim</a></li>
+                            <li class="BankLeumi" id="BankLeumi"><a><img src="assets/bank-logo/leumi.jpg"
+                                        width="32px height=" auto" />Bank Leumi</a></li>
+                            <li class="IsraelDiscountBank" id="IsraelDiscountBank"><a><img
+                                        src="assets/bank-logo/IsraeliDiscont.jpg" width="32px height=" auto" />Israel
+                                    Discount Bank</a></li>
+                            <li class="BankMizrahiTefahot" id="BankMizrahiTefahot"><a><img
+                                        src="assets/bank-logo/MizrahiTefahot.jpg" width="32px height=" auto" />Bank
+                                    Mizrahi-Tefahot</a></li>
+                            <li class="FirstInternationalBankOfIsrael" id="FirstInternationalBankOfIsrael"><a><img
+                                        src="assets/bank-logo/FirstInternational.jpg" width="32px height=" auto" />First
+                                    International Bank of Israel</a></li>
+                            <li class="MercantileDiscountBank" id="MercantileDiscountBank"><a><img
+                                        src="assets/bank-logo/Merchantile.jpg" width="32px height=" auto" />Mercantile
+                                    Discount Bank</a></li>
+                            <li class="BankOtsarHaHayal" id="BankOtsarHaHayal"><a><img
+                                        src="assets/bank-logo/OtsarHayal.jpg" width="32px height=" auto" />Bank Otsar
+                                    Ha-Hayal</a></li>
+                            <li class="BankYahavForGovernmentEmployeesLtd" id="BankYahavForGovernmentEmployeesLtd">
+                                <a><img src="assets/bank-logo/Yahav.jpg" width="32px height=" auto" />Bank Yahav</a>
+                            </li>
+                            <li class="BankMassadLtd" id="BankMassadLtd"><a><img src="assets/bank-logo/Masad.png"
+                                        width="32px height=" auto" />Bank Massad Ltd</a></li>
+                        </ul>
+                    </div>
+                    <div class="bank-data">
+                        <div class="bank-input-box">
+                            <input class="bank-branch-input" type="text" name="" id="bankBranchInput" required>
+                            <span class="bank-branch-span">Bank Branch</span>
+                        </div>
+                        <div class="bank-input-box">
+                            <input class="bank-account-input" type="text" name="" id="bankAccountInput" required>
+                            <span class="bank-account-span">Account Number</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="open-signature-pad">
+                    <button class="btn btn-success btn-sm" id="signaturePadOpenButton">Add
+                        e-signature</button>
                 </div>
 
-                <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Bank Name</span>
+                <div class="signature-input-form" id="signatureInputForm">
+                    <div class="signature-form">
+                        <div class="signature-wrapper" id="signature-wrapper">
+                            <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+                        </div>
+                        <div class="signatureButtonGroup">
+                            <button class="btn btn-success btn-sm" id="signatureSaveButton">Save</button>
+                            <button class="btn btn-success btn-sm" id="signatureClearButton">Clear</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Bank Number</span>
+
+
+
+                <div class="submitButtonGroup">
+                    <button class="btn btn-success btn-sm" id="submit">Submit form.</button>
                 </div>
-                <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Bank Branch</span>
-                </div>
-                <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Account Number</span>
-                </div>
-                <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Last Name</span>
-                </div>
+
             </div>
         </div>
-
     </section>
 
 
 
-    <div class="signature-input-form">
-        <div>
-            <button class="btn btn-success btn-sm open-signature-pad" id="openSignaturePad">Add
-                e-signature</button>
-        </div>
 
-        <div class="signature-form">
-            <div class="signature-wrapper" id="signature-wrapper">
-                <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
-            </div>
-            <div>
-                <button class="btn btn-success btn-sm" id="signatureSaveButton">Save</button>
-                <button class="btn btn-success btn-sm" id="signatureClearButton">Clear</button>
-            </div>
-        </div>
-    </div>
 
-    <button class="btn btn-success btn-sm" id="submit">Send form.</button>
 
     <script src="script.js"></script>
 </body>

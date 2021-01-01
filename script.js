@@ -7,65 +7,241 @@ var signaturePad = new SignaturePad(canvas, {
 });
 
 var requestData = {
-    
+
 };
-let dataReady = false;
 
-let signatureWrapper = document.getElementById('signature-wrapper');
-let signaturePadPanel = document.getElementById('signature-pad');
+let dataSignatureReady = false;
+let SelectedBankElementReady = true;
+let bankSelected = false;
 
-var signaturePadOpenButton = document.getElementById('openSignaturePad');
-var signatureSaveButton = document.getElementById('signatureSaveButton');
-var signatureClearButton = document.getElementById('signatureClearButton');
+// input fields data
+const fullNameInput = document.getElementById('fullNameInput');
+const idNumberInput = document.getElementById('idNumberInput');
+const moneyAmountInput = document.getElementById('moneyAmountInput');
+const datepickerInput = document.getElementById('datepickerInput');
+const selectedBank = document.getElementById('SelectedBank');
+const bankBranchInput = document.getElementById('bankBranchInput');
+const bankAccountInput = document.getElementById('bankAccountInput');
 
-const signaturePadWidth = 400;
-const signaturePadHeight = 200;
+// select bank variables
+const SelectBankBox = document.getElementById('SelectBankBox');
+const SelectedBankElement = document.getElementById('SelectedBank');
+const SelectBankHapoalim = document.getElementById('BankHapoalim');
+const SelectBankLeumi = document.getElementById('BankLeumi');
+const SelectIsraelDiscountBank = document.getElementById('IsraelDiscountBank');
+const SelectBankMizrahiTefahot = document.getElementById('BankMizrahiTefahot');
+const SelectFirstInternationalBankOfIsrael = document.getElementById('FirstInternationalBankOfIsrael');
+const SelectMercantileDiscountBank = document.getElementById('MercantileDiscountBank');
+const SelectBankOtsarHaHayal = document.getElementById('BankOtsarHaHayal');
+const SelectBankYahavForGovernmentEmployeesLtd = document.getElementById('BankYahavForGovernmentEmployeesLtd');
+const SelectBankMassadLtd = document.getElementById('BankMassadLtd');
 
-signaturePadOpenButton.addEventListener('click', (event) => {
-    signaturePadPanel.style.visibility =
-        signatureWrapper.style.visibility =
-        signatureSaveButton.style.visibility =
-        signatureClearButton.style.visibility = 'visible';
+// signature variables
+const signatureWrapper = document.getElementById('signature-wrapper');
+const signaturePadPanel = document.getElementById('signature-pad');
+const signaturePadOpenButton = document.getElementById('signaturePadOpenButton');
+const signatureSaveButton = document.getElementById('signatureSaveButton');
+const signatureClearButton = document.getElementById('signatureClearButton');
 
-    signaturePadPanel.style.width = signaturePadWidth+'px'
-        signatureWrapper.style.width = (signaturePadWidth+5)+'px';
-    signaturePadPanel.style.height =signaturePadHeight+'px'
-        signatureWrapper.style.height = (signaturePadHeight+5)+'px';
-
-    signatureSaveButton.style.width = signatureClearButton.style.width = "100px";
-    signatureSaveButton.style.height = signatureClearButton.style.height = "27px";
-})
-
-signatureSaveButton.addEventListener('click', function (event) {
-    requestData.pictureData = signaturePad.toDataURL('image/png');
-    dataReady = true;
-
-    signaturePadPanel.style.visibility =
-        signatureWrapper.style.visibility =
-        signatureSaveButton.style.visibility =
-        signatureClearButton.style.visibility = 'hidden';
-
-    signaturePadPanel.style.width =
-        signatureWrapper.style.width =
-        signatureSaveButton.style.width =
-        signatureClearButton.style.width = '0px';
-
-
-    signaturePadPanel.style.height =
-        signatureWrapper.style.height =
-        signatureSaveButton.style.height =
-        signatureClearButton.style.height = '0px';
-
+// select bank activity
+SelectedBankElement.addEventListener('click', event => {
+    if (SelectedBankElementReady) {
+        SelectBankBox.style.zIndex = "1";
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "1" });
+        SelectedBankElementReady = false;
+        bankSelected = false;
+    }
+});
+// set bank
+SelectBankHapoalim.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectBankHapoalim.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectBankLeumi.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectBankLeumi.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectIsraelDiscountBank.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectIsraelDiscountBank.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectBankMizrahiTefahot.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectBankMizrahiTefahot.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectFirstInternationalBankOfIsrael.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectFirstInternationalBankOfIsrael.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectMercantileDiscountBank.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectMercantileDiscountBank.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectBankOtsarHaHayal.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectBankOtsarHaHayal.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectBankYahavForGovernmentEmployeesLtd.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectBankYahavForGovernmentEmployeesLtd.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
+});
+SelectBankMassadLtd.addEventListener('click', (event) => {
+    if (!bankSelected) {
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.to('.bank-select-box', { opacity: "0" });
+        tl.to('.bank-select-box', { zIndex: "-1" });
+        SelectedBankElement.innerHTML = SelectBankMassadLtd.innerHTML;
+        bankSelected = true;
+        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+    }
 });
 
+
+
+// signature pad activity
+signaturePadOpenButton.addEventListener('click', (event) => {
+    let signatureForm = document.getElementById("signatureInputForm");
+    signatureForm.style.zIndex = "1";
+    //const pad = document.getElementById("signatureInputForm");
+    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+    //tl.to('.signature-input-form',{zIndex:"1"},"-=2.5s");
+    tl.to('.signature-input-form', { opacity: "1" }, "-=0.5s");
+
+});
+signatureSaveButton.addEventListener('click', function (event) {
+    requestData.pictureData = signaturePad.toDataURL('image/png');
+    dataSignatureReady = true;
+    //const pad = document.getElementById("signatureInputForm");
+    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+    tl.to('.signature-input-form', { opacity: "0", zIndex: "-1" });
+});
 signatureClearButton.addEventListener('click', function (event) {
     signaturePad.clear();
 });
 
+// get data from datepicker
+$('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
+
+// submit data functionality
 $(document).ready(function () {
     const Url = 'http://localhost:3000/doc-data';
     $('#submit').click(function () {
-        if (dataReady) {
+
+
+        const regexAnyLetterExistance = /[a-zA-z]+/g;   // check letters in input
+        const regexId = /[0-9]{9}/g;            // check and get 9 digits
+
+        // check fullname doesn't empty
+        if (fullNameInput.value.toString().trim().length < 1) {
+            alert('Please fill full name field.');
+            return
+        }
+
+        // check that id doesn't contain letters
+        if (idNumberInput.value.match(regexAnyLetterExistance)) {
+            alert("Id field must countain only digits.");
+            return;
+        }
+        // check if id has 9 digits
+        if (!idNumberInput.value.match(regexId)) {
+            alert("Id field must have length of 9 digits.");
+            return;
+        }
+        // check if amount money field has any letter
+        if (moneyAmountInput.value.match(regexAnyLetterExistance) || moneyAmountInput.value.toString().trim().length<1 ) {
+            alert("Amout money field can't be empty and must countain only digits.");
+            return;
+        }
+
+        //check date that latter than today
+
+        // check bank chosen 
+        if(!bankSelected){
+            alert("Need to chose a bank.");
+            return;
+        }
+
+        // check bank branch
+        if(bankBranchInput.value.match(regexAnyLetterExistance) || bankBranchInput.value.toString().trim().length<1){
+            alert("Bank Branch field can't be empty and must countain only digits.");
+            return;
+        }
+
+        // check account number
+        if(bankAccountInput.value.match(regexAnyLetterExistance) || bankAccountInput.value.toString().trim().length<1){
+            alert("Bank Account field can't be empty and must countain only digits.");
+            return;
+        }
+        // check account number length
+
+        // signature check
+        if(!dataSignatureReady){
+            alert("Please add your electronic signature.");
+            return;
+        }
+        // check account number length
+
+        requestData.fullNameInput = fullNameInput.value;
+        requestData.idNumberInput = idNumberInput.value.match(regexId);
+        requestData.moneyAmountInput = moneyAmountInput.value;
+        requestData.datepickerInput = datepickerInput.value;
+        requestData.selectedBank = selectedBank.value;
+        requestData.bankBranchInput = bankBranchInput.value;
+        requestData.bankAccountInput = bankAccountInput.value;
+
+        if (dataSignatureReady) {
             $.ajax({
                 url: Url,
                 type: "POST",
@@ -77,8 +253,10 @@ $(document).ready(function () {
                     console.log(`Error ${error}`)
                 }
             })
+
+            alert('sent');
         } else {
-            alert("data isn't ready.");
+            alert("Can't send request check entered data.");
         }
     })
 })
