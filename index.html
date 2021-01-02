@@ -32,102 +32,106 @@
 
 <body>
 
-    <section>
-        <div class="contactForm">
-            <div class="formBox">
+    <div class="main">
 
-                <h1>Client Data Form</h1>
-                <div class="inputBox w50">
-                    <input class="inputw50" type="text" name="" id="fullNameInput" required>
-                    <span class="spanw50">Full Name</span>
-                </div>
-                <div class="inputBox w50">
-                    <input class="inputw50" type="text" name="" id="idNumberInput" required>
-                    <span class="spanw50">Identification Number</span>
-                </div>
-                <div class="inputBox w50">
-                    <input class="inputw50" type="text" name="" id="moneyAmountInput" required>
-                    <span class="spanw50">Money Amount</span>
-                </div>
-                <div class="input-group date inputBox w50" data-provide="datepicker">
-                    <input class="inputw50 w50" type="text" class="form-control" id="datepickerInput" required>
-                    <div class="input-group-addon"></div>
-                    <span class="spanw50 datetime-spawn">Date Time</span>
-                </div>
-                <div class="bank-input-box">
-                    <span class="selected-bank" id="SelectedBank"><img class="selected-bank-img"
-                            src="assets/bank-logo/bankLogo.jpg" width="32px" height="32px" />Select your Bank</span>
-                    <div class="bank-select-box" id="SelectBankBox">
-                        <ul class="bank-list">
-                            <li class="BankHapoalim" id="BankHapoalim"><a><img src="/assets/bank-logo/hapoalim.png"
-                                        width="32px" height="auto" />Hapoalim</a></li>
-                            <li class="BankLeumi" id="BankLeumi"><a><img src="assets/bank-logo/leumi.jpg"
-                                        width="32px height=" auto" />Bank Leumi</a></li>
-                            <li class="IsraelDiscountBank" id="IsraelDiscountBank"><a><img
-                                        src="assets/bank-logo/IsraeliDiscont.jpg" width="32px height=" auto" />Israel
-                                    Discount Bank</a></li>
-                            <li class="BankMizrahiTefahot" id="BankMizrahiTefahot"><a><img
-                                        src="assets/bank-logo/MizrahiTefahot.jpg" width="32px height=" auto" />Bank
-                                    Mizrahi-Tefahot</a></li>
-                            <li class="FirstInternationalBankOfIsrael" id="FirstInternationalBankOfIsrael"><a><img
-                                        src="assets/bank-logo/FirstInternational.jpg" width="32px height=" auto" />First
-                                    International Bank of Israel</a></li>
-                            <li class="MercantileDiscountBank" id="MercantileDiscountBank"><a><img
-                                        src="assets/bank-logo/Merchantile.jpg" width="32px height=" auto" />Mercantile
-                                    Discount Bank</a></li>
-                            <li class="BankOtsarHaHayal" id="BankOtsarHaHayal"><a><img
-                                        src="assets/bank-logo/OtsarHayal.jpg" width="32px height=" auto" />Bank Otsar
-                                    Ha-Hayal</a></li>
-                            <li class="BankYahavForGovernmentEmployeesLtd" id="BankYahavForGovernmentEmployeesLtd">
-                                <a><img src="assets/bank-logo/Yahav.jpg" width="32px height=" auto" />Bank Yahav</a>
-                            </li>
-                            <li class="BankMassadLtd" id="BankMassadLtd"><a><img src="assets/bank-logo/Masad.png"
-                                        width="32px height=" auto" />Bank Massad Ltd</a></li>
-                        </ul>
-                    </div>
-                    <div class="bank-data">
-                        <div class="bank-input-box">
-                            <input class="bank-branch-input" type="text" name="" id="bankBranchInput" required>
-                            <span class="bank-branch-span">Bank Branch</span>
-                        </div>
-                        <div class="bank-input-box">
-                            <input class="bank-account-input" type="text" name="" id="bankAccountInput" required>
-                            <span class="bank-account-span">Account Number</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="open-signature-pad">
-                    <button class="btn btn-success btn-sm" id="signaturePadOpenButton">Add
-                        e-signature</button>
-                </div>
+        <div class="info-block">
 
-                <div class="signature-input-form" id="signatureInputForm">
-                    <div class="signature-form">
-                        <div class="signature-wrapper" id="signature-wrapper">
-                            <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
-                        </div>
-                        <div class="signatureButtonGroup">
-                            <button class="btn btn-success btn-sm" id="signatureSaveButton">Save</button>
-                            <button class="btn btn-success btn-sm" id="signatureClearButton">Clear</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="submitButtonGroup">
-                    <button class="btn btn-success btn-sm" id="submit">Submit form.</button>
-                </div>
-
-            </div>
         </div>
-    </section>
 
+        <section class="date-collect-section">
+            <div class="contactForm">
+                <div class="formBox">
 
+                    <h1>Client Data Form</h1>
+                    <div class="inputBox w50">
+                        <input class="inputw50" type="text" name="" id="fullNameInput" required>
+                        <span class="spanw50">Full Name</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input class="inputw50" type="text" name="" id="idNumberInput" required>
+                        <span class="spanw50">Identification Number</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input class="inputw50" type="text" name="" id="moneyAmountInput" required>
+                        <span class="spanw50">Money Amount</span>
+                    </div>
+                    <div class="input-group date inputBox w50" data-provide="datepicker">
+                        <input class="inputw50 w50" type="text" class="form-control" id="datepickerInput" required>
+                        <div class="input-group-addon"></div>
+                        <span class="spanw50 datetime-spawn">Date Time</span>
+                    </div>
+                    <div class="bank-input-box">
+                        <span class="selected-bank" id="SelectedBank"><img class="selected-bank-img"
+                                src="assets/bank-logo/bankLogo.jpg" width="32px" height="32px" />Select your Bank</span>
+                        <div class="bank-select-box" id="SelectBankBox">
+                            <ul class="bank-list">
+                                <li class="BankHapoalim" id="BankHapoalim"><a><img src="/assets/bank-logo/hapoalim.png"
+                                            width="32px" height="auto" />Hapoalim</a></li>
+                                <li class="BankLeumi" id="BankLeumi"><a><img src="assets/bank-logo/leumi.jpg"
+                                            width="32px height=" auto" />Bank Leumi</a></li>
+                                <li class="IsraelDiscountBank" id="IsraelDiscountBank"><a><img
+                                            src="assets/bank-logo/IsraeliDiscont.jpg" width="32px height="
+                                            auto" />Israel
+                                        Discount Bank</a></li>
+                                <li class="BankMizrahiTefahot" id="BankMizrahiTefahot"><a><img
+                                            src="assets/bank-logo/MizrahiTefahot.jpg" width="32px height=" auto" />Bank
+                                        Mizrahi-Tefahot</a></li>
+                                <li class="FirstInternationalBankOfIsrael" id="FirstInternationalBankOfIsrael"><a><img
+                                            src="assets/bank-logo/FirstInternational.jpg" width="32px height="
+                                            auto" />First
+                                        International Bank of Israel</a></li>
+                                <li class="MercantileDiscountBank" id="MercantileDiscountBank"><a><img
+                                            src="assets/bank-logo/Merchantile.jpg" width="32px height="
+                                            auto" />Mercantile
+                                        Discount Bank</a></li>
+                                <li class="BankOtsarHaHayal" id="BankOtsarHaHayal"><a><img
+                                            src="assets/bank-logo/OtsarHayal.jpg" width="32px height=" auto" />Bank
+                                        Otsar
+                                        Ha-Hayal</a></li>
+                                <li class="BankYahavForGovernmentEmployeesLtd" id="BankYahavForGovernmentEmployeesLtd">
+                                    <a><img src="assets/bank-logo/Yahav.jpg" width="32px height=" auto" />Bank Yahav</a>
+                                </li>
+                                <li class="BankMassadLtd" id="BankMassadLtd"><a><img src="assets/bank-logo/Masad.png"
+                                            width="32px height=" auto" />Bank Massad Ltd</a></li>
+                            </ul>
+                        </div>
+                        <div class="bank-data">
+                            <div class="bank-input-box">
+                                <input class="bank-branch-input" type="text" name="" id="bankBranchInput" required>
+                                <span class="bank-branch-span">Bank Branch</span>
+                            </div>
+                            <div class="bank-input-box">
+                                <input class="bank-account-input" type="text" name="" id="bankAccountInput" required>
+                                <span class="bank-account-span">Account Number</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="open-signature-pad">
+                        <button class="btn btn-success btn-sm" id="signaturePadOpenButton">Add
+                            e-signature</button>
+                    </div>
 
+                    <div class="signature-input-form" id="signatureInputForm">
+                        <div class="signature-form">
+                            <div class="signature-wrapper" id="signature-wrapper">
+                                <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+                            </div>
+                            <div class="signatureButtonGroup">
+                                <button class="btn btn-success btn-sm" id="signatureSaveButton">Save</button>
+                                <button class="btn btn-success btn-sm" id="signatureClearButton">Clear</button>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="submitButtonGroup">
+                        <button class="btn btn-success btn-sm" id="submit">Submit form.</button>
+                    </div>
 
+                </div>
+            </div>
+        </section>
 
+    </div>
     <script src="script.js"></script>
 </body>
 
