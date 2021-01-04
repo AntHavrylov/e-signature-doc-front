@@ -51,15 +51,26 @@ const limitInputBox = document.getElementById('limitInputBox');
 //limitedAccessCheckbox  event listener
 limitedAccessCheckbox.addEventListener('click', event => {
 
-    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } })
+    const tl = gsap.timeline({
+        defaults: {
+            ease: "power2.inOut"
+        }
+    })
 
     if (limitedAccessCheckbox.checked) {
-        tl.to('.limit-access-input-box',{opacity:"0",height:"0",zIndex:"-1"});
-        
+        tl.to('.limit-access-input-box', {
+            opacity: "0",
+            height: "0",
+            zIndex: "-1"
+        });
+
         //limitInputBox.style.visibility = 'hidden';
     } else {
-        limitInputBox.style.zIndex="1";
-        tl.to('.limit-access-input-box',{opacity:"1",height:"150px"});
+        limitInputBox.style.zIndex = "1";
+        tl.to('.limit-access-input-box', {
+            opacity: "1",
+            height: "150px"
+        });
         //limitInputBox.style.visibility = 'visible';
     }
 });
@@ -70,8 +81,14 @@ limitedAccessCheckbox.addEventListener('click', event => {
 SelectedBankElement.addEventListener('click', event => {
     if (SelectedBankElementReady) {
         SelectBankBox.style.zIndex = "1";
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "1"
+        });
         SelectedBankElementReady = false;
         bankSelected = false;
     }
@@ -79,101 +96,191 @@ SelectedBankElement.addEventListener('click', event => {
 // set bank
 SelectBankHapoalim.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectBankHapoalim.innerHTML;
         bankSelected = true;
-        selectedBankValue = "Hapoalim";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "הפועלים 12";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectBankLeumi.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectBankLeumi.innerHTML;
         bankSelected = true;
-        selectedBankValue = "Leumi";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "לאומי 10";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectIsraelDiscountBank.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectIsraelDiscountBank.innerHTML;
         bankSelected = true;
-        selectedBankValue = "IsraelDiscontBank";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "בנק ישראל דיסקונט 11";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectBankMizrahiTefahot.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectBankMizrahiTefahot.innerHTML;
         bankSelected = true;
-        selectedBankValue = "MizrahiTefahot";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "מיזרחי טפחות 20";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectFirstInternationalBankOfIsrael.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectFirstInternationalBankOfIsrael.innerHTML;
         bankSelected = true;
-        selectedBankValue = "FirstInternationalBankOfIsrael";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "הבנק של ישראל 31 ";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectMercantileDiscountBank.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectMercantileDiscountBank.innerHTML;
         bankSelected = true;
-        selectedBankValue = "MerchantileDiscountBank";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "מרכנתיל דיסקונט 17";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectBankOtsarHaHayal.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectBankOtsarHaHayal.innerHTML;
         bankSelected = true;
-        selectedBankValue = "BankOtsarHaHayal";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "אוצר החייל 14";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectBankYahavForGovernmentEmployeesLtd.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectBankYahavForGovernmentEmployeesLtd.innerHTML;
         bankSelected = true;
-        selectedBankValue = "Yahav";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "בנק יהב 4";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 SelectBankMassadLtd.addEventListener('click', (event) => {
     if (!bankSelected) {
-        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-        tl.to('.bank-select-box', { opacity: "0" });
-        tl.to('.bank-select-box', { zIndex: "-1" });
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.inOut"
+            }
+        });
+        tl.to('.bank-select-box', {
+            opacity: "0"
+        });
+        tl.to('.bank-select-box', {
+            zIndex: "-1"
+        });
         SelectedBankElement.innerHTML = SelectBankMassadLtd.innerHTML;
         bankSelected = true;
-        selectedBankValue = "Massad";
-        setTimeout(() => { SelectedBankElementReady = true; }, 1000);
+        selectedBankValue = "מסד 46";
+        setTimeout(() => {
+            SelectedBankElementReady = true;
+        }, 1000);
     }
 });
 
@@ -184,17 +291,30 @@ signaturePadOpenButton.addEventListener('click', (event) => {
     let signatureForm = document.getElementById("signatureInputForm");
     signatureForm.style.zIndex = "1";
     //const pad = document.getElementById("signatureInputForm");
-    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+    const tl = gsap.timeline({
+        defaults: {
+            ease: "power2.inOut"
+        }
+    });
     //tl.to('.signature-input-form',{zIndex:"1"},"-=2.5s");
-    tl.to('.signature-input-form', { opacity: "1" }, "-=0.5s");
+    tl.to('.signature-input-form', {
+        opacity: "1"
+    }, "-=0.5s");
 
 });
 signatureSaveButton.addEventListener('click', function (event) {
     requestData.pictureData = signaturePad.toDataURL('image/png');
     dataSignatureReady = true;
     //const pad = document.getElementById("signatureInputForm");
-    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
-    tl.to('.signature-input-form', { opacity: "0", zIndex: "-1" });
+    const tl = gsap.timeline({
+        defaults: {
+            ease: "power2.inOut"
+        }
+    });
+    tl.to('.signature-input-form', {
+        opacity: "0",
+        zIndex: "-1"
+    });
 });
 signatureClearButton.addEventListener('click', function (event) {
     signaturePad.clear();
@@ -211,7 +331,9 @@ $(document).ready(function () {
     const Url = 'http://localhost:3000/doc-data';
 
     let checkDate = (date) => {
-        if (date.trim().length < 1) { return false; }
+        if (date.trim().length < 1) {
+            return false;
+        }
         let datepickerDate = date.split('/');
         //console.log(`bank: ${selectedBank.value}`);
         //console.log(`datePickerdata: month-${datepickerDate[0]}, day-${datepickerDate[1]}, year-${datepickerDate[2]}`);
@@ -220,9 +342,15 @@ $(document).ready(function () {
         let monthNow = dateNow.getMonth() + 1;
         let yearNow = dateNow.getFullYear();
 
-        if (parseInt(datepickerDate[2]) < parseInt(yearNow)) { return false; }
-        if (parseInt(datepickerDate[0]) < parseInt(monthNow)) { return false; }
-        if (parseInt(datepickerDate[1]) < parseInt(dayNow)) { return false; }
+        if (parseInt(datepickerDate[2]) < parseInt(yearNow)) {
+            return false;
+        }
+        if (parseInt(datepickerDate[0]) < parseInt(monthNow)) {
+            return false;
+        }
+        if (parseInt(datepickerDate[1]) < parseInt(dayNow)) {
+            return false;
+        }
 
         //console.log(`today: ${dayNow}/${monthNow}/${yearNow}`);
         return true;
@@ -231,12 +359,12 @@ $(document).ready(function () {
 
     $('#submit').click(function () {
 
-        const regexAnyLetterExistance = /[a-zA-z]+/g;   // check letters in input
-        const regexId = /[0-9]{9}/g;            // check and get 9 digits
+        const regexAnyLetterExistance = /[a-zA-z]+/g; // check letters in input
+        const regexId = /[0-9]{9}/g; // check and get 9 digits
 
         // check fullname doesn't empty
         if (fullNameInput.value.toString().trim().length < 1) {
-            alert('Please fill full name field.');
+            alert('בבקשה נא למלא שם ושם משפחה');
             return
         }
 
@@ -245,7 +373,7 @@ $(document).ready(function () {
             idNumberInput.value.match(regexAnyLetterExistance) ||
             idNumberInput.value.toString().trim().length != 9
         ) {
-            alert("Id field must have a length of 9 digits and countain only digits.");
+            alert(" בבקשה להוסיף תעודת זהות תקינה עם 9 ספרות");
             return;
         }
 
@@ -259,24 +387,23 @@ $(document).ready(function () {
             if (
                 moneyAmountInput.value.match(regexAnyLetterExistance) ||
                 moneyAmountInput.value.toString().trim().length < 1) {
-                alert("Amout money field can't be empty and must countain only digits.");
+                alert("בבקשה נא להכניס סכום החיוב במספרים");
                 return;
             }
 
             //check date that latter than today
             let validDate = checkDate(datepickerInput.value);
             if (!validDate) {
-                alert('Entered wrond date.');
+                alert('בבקשה לבחור תאריך קיעת תוקף');
                 return;
             }
-        }
-        else {
+        } else {
             requestData.unlimitedAccess = true;
         }
 
         // check bank chosen 
         if (!bankSelected) {
-            alert("Need to chose a bank.");
+            alert("בבקשה לבחור בנק");
             return;
         }
 
@@ -285,20 +412,20 @@ $(document).ready(function () {
             bankBranchInput.value.match(regexAnyLetterExistance) ||
             bankBranchInput.value.toString().trim().length != 3
         ) {
-            alert("Bank Branch field must have length of 3 digits and must countain only digits.");
+            alert(" בבקשה הכנס מספר סניף הבנק, מספר סניף הבנק חייב להכיל רק 3 ספרות");
             return;
         }
 
         // check account number
         if (bankAccountInput.value.match(regexAnyLetterExistance) || bankAccountInput.value.toString().trim().length < 1) {
-            alert("Bank Account field can't be empty and must countain only digits.");
+            alert("בבקשה הכנס מספר חשבון הבנק ");
             return;
         }
         // check account number length
 
         // signature check
         if (!dataSignatureReady) {
-            alert("Please add your electronic signature.");
+            alert("בבקשה הוסף חתימה אלקטרונית");
             return;
         }
 
@@ -309,7 +436,8 @@ $(document).ready(function () {
         requestData.selectedBank = selectedBankValue;
         requestData.bankBranchInput = bankBranchInput.value;
         requestData.bankAccountInput = bankAccountInput.value;
-
+        requestData.bankNumberInput = selectedBankValue.split(" ")[selectedBankValue.split(" ").length - 1];
+        debugger
         if (dataSignatureReady) {
             $.ajax({
                 url: Url,
