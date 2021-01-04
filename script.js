@@ -23,6 +23,7 @@ const datepickerInput = document.getElementById('datepickerInput');
 const selectedBank = document.getElementById('SelectedBank');
 const bankBranchInput = document.getElementById('bankBranchInput');
 const bankAccountInput = document.getElementById('bankAccountInput');
+const limitedAccessCheckbox = document.getElementById('limitedAccessCheckbox');
 
 // select bank variables
 const SelectBankBox = document.getElementById('SelectBankBox');
@@ -43,6 +44,27 @@ const signaturePadPanel = document.getElementById('signature-pad');
 const signaturePadOpenButton = document.getElementById('signaturePadOpenButton');
 const signatureSaveButton = document.getElementById('signatureSaveButton');
 const signatureClearButton = document.getElementById('signatureClearButton');
+
+
+const limitInputBox = document.getElementById('limitInputBox');
+
+//limitedAccessCheckbox  event listener
+limitedAccessCheckbox.addEventListener('click', event => {
+
+    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } })
+
+    if (limitedAccessCheckbox.checked) {
+        tl.to('.limit-access-input-box',{opacity:"0",height:"0",zIndex:"-1"});
+        
+        //limitInputBox.style.visibility = 'hidden';
+    } else {
+        limitInputBox.style.zIndex="1";
+        tl.to('.limit-access-input-box',{opacity:"1",height:"150px"});
+        //limitInputBox.style.visibility = 'visible';
+    }
+});
+
+
 
 // select bank activity
 SelectedBankElement.addEventListener('click', event => {
@@ -189,6 +211,7 @@ $(document).ready(function () {
     const Url = 'http://localhost:3000/doc-data';
 
     let checkDate = (date) => {
+        if (date.trim().length < 1) { return false; }
         let datepickerDate = date.split('/');
         //console.log(`bank: ${selectedBank.value}`);
         //console.log(`datePickerdata: month-${datepickerDate[0]}, day-${datepickerDate[1]}, year-${datepickerDate[2]}`);
@@ -197,26 +220,16 @@ $(document).ready(function () {
         let monthNow = dateNow.getMonth() + 1;
         let yearNow = dateNow.getFullYear();
 
-        if (parseInt(datepickerDate[2]) < parseInt(yearNow)) {
-            //alert(`entered year is less than durrent.`);
-            return false;
-        }
-        if (parseInt(datepickerDate[0]) < parseInt(monthNow)) {
-            //alert(`entered month is less than durrent.`);
-            return false;
-        }
-        if (parseInt(datepickerDate[1]) < parseInt(dayNow)) {
-            //alert(`entered day is less than durrent.`);
-            return false;
-        }
+        if (parseInt(datepickerDate[2]) < parseInt(yearNow)) { return false; }
+        if (parseInt(datepickerDate[0]) < parseInt(monthNow)) { return false; }
+        if (parseInt(datepickerDate[1]) < parseInt(dayNow)) { return false; }
 
         //console.log(`today: ${dayNow}/${monthNow}/${yearNow}`);
         return true;
     }
 
-    
-    $('#submit').click(function () {
 
+    $('#submit').click(function () {
 
         const regexAnyLetterExistance = /[a-zA-z]+/g;   // check letters in input
         const regexId = /[0-9]{9}/g;            // check and get 9 digits
@@ -235,20 +248,30 @@ $(document).ready(function () {
             alert("Id field must have a length of 9 digits and countain only digits.");
             return;
         }
-        // check if amount money field has any letter and isn't empty
-        if (
-            moneyAmountInput.value.match(regexAnyLetterExistance) ||
-            moneyAmountInput.value.toString().trim().length < 1
-        ) {
-            alert("Amout money field can't be empty and must countain only digits.");
-            return;
-        }
 
-        //check date that latter than today
-        let validDate = checkDate(datepickerInput.value);
-        if(!validDate){
-            alert('Entered wrond date.');
-            return;
+
+
+        if (!limitedAccessCheckbox.checked) {
+            //set 
+            requestData.unlimitedAccess = false;
+
+            // check if amount money field has any letter and isn't empty
+            if (
+                moneyAmountInput.value.match(regexAnyLetterExistance) ||
+                moneyAmountInput.value.toString().trim().length < 1) {
+                alert("Amout money field can't be empty and must countain only digits.");
+                return;
+            }
+
+            //check date that latter than today
+            let validDate = checkDate(datepickerInput.value);
+            if (!validDate) {
+                alert('Entered wrond date.');
+                return;
+            }
+        }
+        else {
+            requestData.unlimitedAccess = true;
         }
 
         // check bank chosen 

@@ -31,105 +31,155 @@
 </head>
 
 <body>
-
     <div class="main">
 
         <div class="info-block">
+            <div class="header-box">
+                <img class="logo-left" src="./assets/images/1.jpg" alt="" >
+                <div class="title">
+                    <div class="main-title">
+                        <div>
+                            <h1>Pure-levana</h1>
+                        </div>
+                        <div>
+                            <h1>Golden minutes</h1>
+                        </div>
+                    </div>
+                    <div class="sub-title">
+                        <h2>עמותת דקות הזהב פשוט להציל חיים</h2>
+                    </div>
+                </div>
 
+                <img class="logo-right" src="./assets/images/2.jpg" alt="" >
+                
+            </div>
+            <div class="title">
+                <h5>.בקשה להקמת הרשאה לחיוב בחשבון</h5>
+            </div>
+            <div class="main-data">
+                <div>
+                    <span class="red">לתשומת לבכם: אי סימון אחת מהחלופות המוצגות לעיל, משמעה בחירה בהרשאה כללית, שאינה כוללת הגבלות</span>
+                </div>
+                <div>
+                    <span>:כמו כן יחולן ההוראות הבאות</span>
+                </div>
+                <div class="data">
+                    <span>.א - עלינו לקבל מהמוטב את הפרטים הנדרשים למילוי הבקשה להקמת הרשאה לחיוב בחשבון</span>
+                    <span>.ב - הרשאה זו ניתנת לביטול ע"י הודעה בכתב מאיתנו לבנק, שתכנס לתוקף יום עסקים אחד לאחר מתן ההודעה לבנק, וכן ניתנת לביטול עפ"י הוראת כל דין</span>
+                    <span>.ג - נהיה רשאים לבטל חיוב מסיום, ובלבד שההודעה על כך תמסר על ידנו בכתב לבנק, לא יאוחר מ-3 ימי עסקים לאחר מועד החיוב. ככל שהודעת הביטול ניתנה לאחר מועד החיוב, הזיכוי ייעשה בערך יום מתן הודעת הביטול</span>
+                    <span>.ד - נהיה רשאים לדרוש מהבנק, בהודעה בכתב, לבטל חיוב, אם החיוב אינו תואם את מועד פקיעת התוקף שנקבע בהרשאה, או את הסכומים שנקבעו בהרשאה, אם נקבעו</span>
+                    <span>.ה - הבנק אינו אחראי בכל הנוגע לעסקה שבינינו לבין המוטב</span>
+                    <span>.ו - הרשאה שלא יעשה בה שימוש במשך תקופה של 24 חודשים ממועד החיוב האחרון, בטלה</span>
+                    <span>.ז - אם תענו לבקשתנו, הבנק יפעל בהתאם להוראות הרשאה זו, בכפוף להוראות כל דין והסכם שבינינו לבין הבנק</span>
+                    <span>.ח - הבנק רשאי להוציאנו מן הסדר המפורט בהרשאה זו, אם תהיה לו סיבה סבירה לכך, ויודיע לנו על כך מיד לאחר קבלת החלטתו תוך ציון הסיבה</span>
+                    <span>.אנו מסכימים שבקשה זו תוגש לבנק ע"י המוטב</span>
+                </div>                
+            </div>
         </div>
 
-        <section class="date-collect-section">
+        <div class="date-collect-section">
             <div class="contactForm">
                 <div class="formBox">
 
-                    <h1>Client Data Form</h1>
+                    <h1>הוספת פרטים וחתימה</h1>
                     <div class="inputBox w50">
                         <input class="inputw50" type="text" name="" id="fullNameInput" required>
-                        <span class="spanw50">Full Name</span>
+                        <span class="spanw50">:שם מלא</span>
+                        <label class="rtl-label">אני הח"מ(שם בעל החשבון כמופיע בספרי הבנק)</label>
                     </div>
                     <div class="inputBox w50">
                         <input class="inputw50" type="text" name="" id="idNumberInput" required>
-                        <span class="spanw50">Identification Number</span>
+                        <span class="spanw50">:מספר זהות</span>
                     </div>
-                    <div class="inputBox w50">
-                        <input class="inputw50" type="text" name="" id="moneyAmountInput" required>
-                        <span class="spanw50">Money Amount</span>
-                    </div>
-                    <div class="input-group date inputBox w50" data-provide="datepicker">
-                        <input class="inputw50 w50" type="text" class="form-control" id="datepickerInput" required>
-                        <div class="input-group-addon"></div>
-                        <span class="spanw50 datetime-spawn">Date Time</span>
-                    </div>
+
                     <div class="bank-input-box">
-                        <span class="selected-bank" id="SelectedBank"><img class="selected-bank-img"
-                                src="assets/bank-logo/bankLogo.jpg" width="32px" height="32px" />Select your Bank</span>
+                        <span class="selected-bank" id="SelectedBank">הוספת בנק<img class="selected-bank-img"
+                                src="assets/bank-logo/bankLogo.jpg" width="32px" height="32px" /></span>
                         <div class="bank-select-box" id="SelectBankBox">
                             <ul class="bank-list">
-                                <li class="BankHapoalim" id="BankHapoalim"><a><img src="/assets/bank-logo/hapoalim.png"
-                                            width="32px" height="auto" />Hapoalim</a></li>
-                                <li class="BankLeumi" id="BankLeumi"><a><img src="assets/bank-logo/leumi.jpg"
-                                            width="32px height=" auto" />Bank Leumi</a></li>
-                                <li class="IsraelDiscountBank" id="IsraelDiscountBank"><a><img
+                                <li class="BankHapoalim" id="BankHapoalim"><a>הפועלים
+                                    <img src="/assets/bank-logo/hapoalim.png"
+                                            width="32px" height="auto" /></a>
+                                        </li>
+                                <li class="BankLeumi" id="BankLeumi"><a>בנק לאומי<img src="assets/bank-logo/leumi.jpg"
+                                            width="32px height=" auto" /></a></li>
+                                <li class="IsraelDiscountBank" id="IsraelDiscountBank"><a>ישראל דיסקונט<img
                                             src="assets/bank-logo/IsraeliDiscont.jpg" width="32px height="
-                                            auto" />Israel
-                                        Discount Bank</a></li>
-                                <li class="BankMizrahiTefahot" id="BankMizrahiTefahot"><a><img
-                                            src="assets/bank-logo/MizrahiTefahot.jpg" width="32px height=" auto" />Bank
-                                        Mizrahi-Tefahot</a></li>
-                                <li class="FirstInternationalBankOfIsrael" id="FirstInternationalBankOfIsrael"><a><img
+                                            auto" /></a></li>
+                                <li class="BankMizrahiTefahot" id="BankMizrahiTefahot"><a>מזרחי טפחות<img
+                                            src="assets/bank-logo/MizrahiTefahot.jpg" width="32px height=" auto" /></a></li>
+                                <li class="FirstInternationalBankOfIsrael" id="FirstInternationalBankOfIsrael"><a>הבנק הראשון של ישראל<img
                                             src="assets/bank-logo/FirstInternational.jpg" width="32px height="
-                                            auto" />First
-                                        International Bank of Israel</a></li>
-                                <li class="MercantileDiscountBank" id="MercantileDiscountBank"><a><img
+                                            auto" /></a></li>
+                                <li class="MercantileDiscountBank" id="MercantileDiscountBank"><a>מרכנתיל דיסקונט<img
                                             src="assets/bank-logo/Merchantile.jpg" width="32px height="
-                                            auto" />Mercantile
-                                        Discount Bank</a></li>
-                                <li class="BankOtsarHaHayal" id="BankOtsarHaHayal"><a><img
-                                            src="assets/bank-logo/OtsarHayal.jpg" width="32px height=" auto" />Bank
-                                        Otsar
-                                        Ha-Hayal</a></li>
+                                            auto" /></a></li>
+                                <li class="BankOtsarHaHayal" id="BankOtsarHaHayal"><a>אוצר החייל<img
+                                            src="assets/bank-logo/OtsarHayal.jpg" width="32px height=" auto" /></a></li>
                                 <li class="BankYahavForGovernmentEmployeesLtd" id="BankYahavForGovernmentEmployeesLtd">
-                                    <a><img src="assets/bank-logo/Yahav.jpg" width="32px height=" auto" />Bank Yahav</a>
+                                    <a>בנק יהב<img src="assets/bank-logo/Yahav.jpg" width="32px height=" auto" /></a>
                                 </li>
-                                <li class="BankMassadLtd" id="BankMassadLtd"><a><img src="assets/bank-logo/Masad.png"
-                                            width="32px height=" auto" />Bank Massad Ltd</a></li>
+                                <li class="BankMassadLtd" id="BankMassadLtd"><a>בנק מסד<img src="assets/bank-logo/Masad.png"
+                                            width="32px height=" auto" /></a></li>
                             </ul>
                         </div>
+
                         <div class="bank-data">
-                            <div class="bank-input-box">
-                                <input class="bank-branch-input" type="text" name="" id="bankBranchInput" required>
-                                <span class="bank-branch-span">Bank Branch</span>
-                            </div>
-                            <div class="bank-input-box">
+                            <div class="bank-account-box">
                                 <input class="bank-account-input" type="text" name="" id="bankAccountInput" required>
-                                <span class="bank-account-span">Account Number</span>
+                                <span class="bank-account-span">:מספר חשבון</span>
+                            </div>
+                            <div class="bank-branch-box">
+                                <input class="bank-branch-input" type="text" name="" id="bankBranchInput" required>
+                                <span class="bank-branch-span">:מספר סניף</span>
                             </div>
                         </div>
+
                     </div>
+                    
+                    <div class="limit-access-checkbox-box">
+                        <label class="form-check-label" for="unlimitedAccess">בחירה בהרשאה כללית, שאינה כוללת הגבלות</label>
+                        <input type="checkbox" class="form-check-input" id="limitedAccessCheckbox" >
+                    </div>
+                    <div id="limitInputBox" class="limit-access-input-box">
+                        <div class="inputBox w50" id="moneyAmountInputBox">
+                            <input class="inputw50" type="text" name="" id="moneyAmountInput" required>
+                            <span class="spanw50">:תקרת סכום החיוב(בש"ח)</span>
+                        </div>
+    
+                        <div class="input-group date inputBox w50" data-provide="datepicker" id="datepickerInputBox">
+                            <input class="inputw50 w50" type="text" class="form-control" id="datepickerInput" required>
+                            <div class="input-group-addon"></div>
+                            <span class="spanw50 datetime-spawn">:מועד פקיעת תוקף ההרשאה ביום</span>
+                        </div>
+                    </div>
+                    
+                    
+                    
                     <div class="open-signature-pad">
-                        <button class="btn btn-success btn-sm" id="signaturePadOpenButton">Add
-                            e-signature</button>
+                        <button class="btn btn-success btn-sm sigmature-pad-open-button" id="signaturePadOpenButton">חתימה הלקוח</button>
                     </div>
 
-                    <div class="signature-input-form" id="signatureInputForm">
-                        <div class="signature-form">
-                            <div class="signature-wrapper" id="signature-wrapper">
-                                <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
-                            </div>
-                            <div class="signatureButtonGroup">
-                                <button class="btn btn-success btn-sm" id="signatureSaveButton">Save</button>
-                                <button class="btn btn-success btn-sm" id="signatureClearButton">Clear</button>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <div class="submitButtonGroup">
-                        <button class="btn btn-success btn-sm" id="submit">Submit form.</button>
+                        <button class="btn btn-success btn-sm" id="submit">שלח טופס</button>
                     </div>
 
                 </div>
+                <div class="signature-input-form" id="signatureInputForm">
+                    <div class="signature-form">
+                        <div class="signature-wrapper" id="signature-wrapper">
+                            <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+                        </div>
+                        <div class="signatureButtonGroup">
+                            <button class="btn btn-success btn-sm" id="signatureSaveButton">שמור חתימה</button>
+                            <button class="btn btn-success btn-sm" id="signatureClearButton">נקה חתימה</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </div>
 
     </div>
     <script src="script.js"></script>
