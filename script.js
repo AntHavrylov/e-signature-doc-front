@@ -317,6 +317,7 @@ signatureSaveButton.addEventListener('click', function (event) {
     });
 });
 signatureClearButton.addEventListener('click', function (event) {
+    dataSignatureReady.false;
     signaturePad.clear();
 });
 
@@ -380,7 +381,7 @@ $(document).ready(function () {
 
 
         if (!limitedAccessCheckbox.checked) {
-            //set 
+            //set unlimited access
             requestData.unlimitedAccess = false;
 
             // check if amount money field has any letter and isn't empty
@@ -429,6 +430,12 @@ $(document).ready(function () {
             return;
         }
 
+        let isEmptyPicture = checkEmptySign(requestData.pictureData);
+        if(isEmptyPicture){
+            alert("Please retake signature");
+            return;
+        }
+
         requestData.fullNameInput = fullNameInput.value;
         requestData.idNumberInput = idNumberInput.value.match(regexId);
         requestData.moneyAmountInput = moneyAmountInput.value;
@@ -437,8 +444,25 @@ $(document).ready(function () {
         requestData.bankBranchInput = bankBranchInput.value;
         requestData.bankAccountInput = bankAccountInput.value;
         requestData.bankNumberInput = selectedBankValue.split(" ")[selectedBankValue.split(" ").length - 1];
-        debugger
+
+
         if (dataSignatureReady) {
+
+
+            const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+            tl.to('.info-block', {
+                opacity: "0", zIndex: "-2"
+            }, "-=0.5s");
+            tl.to('.data-collect-section', {
+                opacity: "0", zIndex: "-2"
+            }, "-=0.5s");
+            tl.to('.success-message', {
+                opacity: "1", zIndex: "1"
+            }, "-=0.5s");
+
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
             $.ajax({
                 url: Url,
                 type: "POST",
@@ -451,9 +475,27 @@ $(document).ready(function () {
                 }
             })
 
-            alert('sent');
+            //alert('sent');
+
+
         } else {
             alert("Can't send request check entered data.");
         }
     })
 })
+
+
+function checkEmptySign(signature) {
+    let aCounter = 0;
+    for (let i = 0; i < signature.length; i++) {
+        if (signature[i] == 'A' && signature[i + 1] == 'A') {
+            aCounter++;
+            if (aCounter == 400) {
+                return true;
+            }
+        } else {
+            aCounter = 0;
+        }
+    }
+    return false;
+}

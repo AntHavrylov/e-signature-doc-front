@@ -69,7 +69,7 @@
         }
     }
 
-    .date-collect-section {
+    .data-collect-section {
         margin: auto;
         position: relative;
         background-color: #0d2f49;
@@ -85,7 +85,7 @@
             max-width: 700px;
             box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
             border-radius: 5px;
-
+            
             h1 {
                 display: block;
                 text-align: center;
@@ -323,6 +323,49 @@
                     }
                 }
             }
+        }
+    }
+
+    .success-message{
+        border-radius: 5px;
+        background-color: #fff;
+        min-width: 400px;
+        max-width: 600px;
+        height: 300px;
+
+        padding: 0 20px 0 20px;
+
+        position:absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+
+        z-index: -3;
+        opacity: 0;
+
+        .message-data{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            display: grid;
+            grid-template-columns: min-content auto min-content;
+        }
+
+        .title{
+            text-align: center;
+           display: block;
+        }
+        .logo-left {
+            min-width: 40px;
+            min-height: 40px;
+            max-width: 120px;
+            max-height: 120px;
+        }
+        .logo-right {
+            min-width: 40px;
+            min-height: 40px;
+            max-width: 120px;
+            max-height: 120px;
         }
     }
 }
