@@ -44,9 +44,12 @@ const signaturePadPanel = document.getElementById('signature-pad');
 const signaturePadOpenButton = document.getElementById('signaturePadOpenButton');
 const signatureSaveButton = document.getElementById('signatureSaveButton');
 const signatureClearButton = document.getElementById('signatureClearButton');
-
+const signaturepadCloseButton = document.getElementById('signaturepadCloseButton');
 
 const limitInputBox = document.getElementById('limitInputBox');
+
+const clearSignature = (() => { return signaturePad.toDataURL('image/png')})();
+
 
 //limitedAccessCheckbox  event listener
 limitedAccessCheckbox.addEventListener('click', event => {
@@ -320,6 +323,21 @@ signatureClearButton.addEventListener('click', function (event) {
     dataSignatureReady.false;
     signaturePad.clear();
 });
+signaturepadCloseButton.addEventListener('click', function (event){
+    const tl = gsap.timeline({
+        defaults: {
+            ease: "power2.inOut"
+        }
+    });
+    tl.to('.signature-input-form', {
+        opacity: "0",
+        zIndex: "-1"
+    });
+})
+
+
+
+
 
 // get data from datepicker
 $('.datepicker').datepicker({
@@ -430,11 +448,9 @@ $(document).ready(function () {
             return;
         }
 
-        let isEmptyPicture = checkEmptySign(requestData.pictureData);
-        if(isEmptyPicture){
-            alert("Please retake signature");
-            return;
-        }
+        
+
+        
 
         requestData.fullNameInput = fullNameInput.value;
         requestData.idNumberInput = idNumberInput.value.match(regexId);
@@ -444,6 +460,11 @@ $(document).ready(function () {
         requestData.bankBranchInput = bankBranchInput.value;
         requestData.bankAccountInput = bankAccountInput.value;
         requestData.bankNumberInput = selectedBankValue.split(" ")[selectedBankValue.split(" ").length - 1];
+
+        if(requestData.pictureData == clearSignature){
+            alert("בבקשה נא לחתום");
+            return;
+        };
 
 
         if (dataSignatureReady) {
@@ -462,6 +483,8 @@ $(document).ready(function () {
 
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+            
 
             $.ajax({
                 url: Url,
@@ -485,17 +508,4 @@ $(document).ready(function () {
 })
 
 
-function checkEmptySign(signature) {
-    let aCounter = 0;
-    for (let i = 0; i < signature.length; i++) {
-        if (signature[i] == 'A' && signature[i + 1] == 'A') {
-            aCounter++;
-            if (aCounter == 400) {
-                return true;
-            }
-        } else {
-            aCounter = 0;
-        }
-    }
-    return false;
-}
+

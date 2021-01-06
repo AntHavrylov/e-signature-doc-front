@@ -216,12 +216,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(18%, -50%);
-          transform: translate(18%, -50%);
+  -webkit-transform: translate(7%, -50%);
+          transform: translate(7%, -50%);
   list-style: none;
   margin: 0;
   padding: 10px;
-  width: 300px;
+  width: 350px;
   background-color: #fff;
   border: 1px solid #f8f8f8;
   border-radius: 5px;
@@ -322,6 +322,55 @@
   margin: auto;
   opacity: 0;
   z-index: -1;
+}
+
+.main .data-collect-section .contactForm .signature-input-form .signature-top-buttons {
+  display: block;
+  text-align: right;
+}
+
+.main .data-collect-section .contactForm .signature-input-form .close-modal-button {
+  position: absolute;
+  left: 0px;
+  top: -25px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #eef5df;
+  background-color: #ff5248;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 1px 10px rgba(61, 61, 61, 0.8);
+          box-shadow: 0px 1px 10px rgba(61, 61, 61, 0.8);
+  z-index: 2;
+}
+
+.main .data-collect-section .contactForm .signature-input-form .close-modal-button::before,
+.main .data-collect-section .contactForm .signature-input-form .close-modal-button::after {
+  position: absolute;
+  top: 12px;
+  left: 7px;
+  width: 13px;
+  height: 3px;
+  content: "";
+  background-color: #eef5df;
+  display: none;
+}
+
+.main .data-collect-section .contactForm .signature-input-form .close-modal-button::before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.main .data-collect-section .contactForm .signature-input-form .close-modal-button::after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.main .data-collect-section .contactForm .signature-input-form .close-modal-button:hover {
+  cursor: pointer;
+}
+
+.main .data-collect-section .contactForm .signature-input-form .close-modal-button:hover::before, .main .data-collect-section .contactForm .signature-input-form .close-modal-button:hover::after {
+  display: block;
 }
 
 .main .data-collect-section .contactForm .signature-input-form .signature-wrapper {
