@@ -6,9 +6,6 @@ var signaturePad = new SignaturePad(canvas, {
     penColor: "rgb(33,33,33)"
 });
 
-var requestData = {
-
-};
 
 let dataSignatureReady = false;
 let SelectedBankElementReady = true;
@@ -48,8 +45,8 @@ const signaturepadCloseButton = document.getElementById('signaturepadCloseButton
 
 const limitInputBox = document.getElementById('limitInputBox');
 
-const clearSignature = (() => { return signaturePad.toDataURL('image/png')})();
-
+// get clear signature data
+const clearSignature = (() => { return signaturePad.toDataURL('image/png') })();
 
 //limitedAccessCheckbox  event listener
 limitedAccessCheckbox.addEventListener('click', event => {
@@ -323,7 +320,7 @@ signatureClearButton.addEventListener('click', function (event) {
     dataSignatureReady.false;
     signaturePad.clear();
 });
-signaturepadCloseButton.addEventListener('click', function (event){
+signaturepadCloseButton.addEventListener('click', function (event) {
     const tl = gsap.timeline({
         defaults: {
             ease: "power2.inOut"
@@ -448,9 +445,9 @@ $(document).ready(function () {
             return;
         }
 
-        
 
-        
+
+
 
         requestData.fullNameInput = fullNameInput.value;
         requestData.idNumberInput = idNumberInput.value.match(regexId);
@@ -461,7 +458,7 @@ $(document).ready(function () {
         requestData.bankAccountInput = bankAccountInput.value;
         requestData.bankNumberInput = selectedBankValue.split(" ")[selectedBankValue.split(" ").length - 1];
 
-        if(requestData.pictureData == clearSignature){
+        if (requestData.pictureData == clearSignature) {
             alert("בבקשה נא לחתום");
             return;
         };
@@ -484,7 +481,7 @@ $(document).ready(function () {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
-            
+
 
             $.ajax({
                 url: Url,

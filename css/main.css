@@ -1,4 +1,7 @@
 .main {
+  position: relative;
+  top: 0;
+  right: 0;
   display: block;
   padding-top: 30px;
   background-color: #0d2f49;
