@@ -20,7 +20,7 @@ const datepickerInput = document.getElementById('datepickerInput');
 const selectedBank = document.getElementById('SelectedBank');
 const bankBranchInput = document.getElementById('bankBranchInput');
 const bankAccountInput = document.getElementById('bankAccountInput');
-const limitedAccessCheckbox = document.getElementById('limitedAccessCheckbox');
+//const limitedAccessCheckbox = document.getElementById('limitedAccessCheckbox');
 
 // select bank variables
 const SelectBankBox = document.getElementById('SelectBankBox');
@@ -47,9 +47,9 @@ const limitInputBox = document.getElementById('limitInputBox');
 
 // get clear signature data
 const clearSignature = (() => { return signaturePad.toDataURL('image/png') })();
-
+let requestData = {};
 //limitedAccessCheckbox  event listener
-limitedAccessCheckbox.addEventListener('click', event => {
+/* limitedAccessCheckbox.addEventListener('click', event => {
 
     const tl = gsap.timeline({
         defaults: {
@@ -73,7 +73,7 @@ limitedAccessCheckbox.addEventListener('click', event => {
         });
         //limitInputBox.style.visibility = 'visible';
     }
-});
+}); */
 
 
 
@@ -395,7 +395,7 @@ $(document).ready(function () {
 
 
 
-        if (!limitedAccessCheckbox.checked) {
+        /* if (!limitedAccessCheckbox.checked) {
             //set unlimited access
             requestData.unlimitedAccess = false;
 
@@ -415,7 +415,7 @@ $(document).ready(function () {
             }
         } else {
             requestData.unlimitedAccess = true;
-        }
+        } */
 
         // check bank chosen 
         if (!bankSelected) {

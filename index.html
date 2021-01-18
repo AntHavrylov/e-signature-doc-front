@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5cf9424341.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
@@ -29,7 +30,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css"
         rel="stylesheet" />
 
-    
+
 
 </head>
 
@@ -79,13 +80,13 @@
                 <h5>.בקשה להקמת הרשאה לחיוב בחשבון</h5>
             </div>
             <div class="main-data">
-                <div>
+                <!-- <div>
                     <span class="red">לתשומת לבכם: אי סימון אחת מהחלופות המוצגות לעיל, משמעה בחירה בהרשאה כללית, שאינה
                         כוללת הגבלות</span>
                 </div>
                 <div>
                     <span>:כמו כן יחולן ההוראות הבאות</span>
-                </div>
+                </div>-->
                 <div class="data">
                     <span>.א - עלינו לקבל מהמוטב את הפרטים הנדרשים למילוי הבקשה להקמת הרשאה לחיוב בחשבון</span>
                     <span>.ב - הרשאה זו ניתנת לביטול ע"י הודעה בכתב מאיתנו לבנק, שתכנס לתוקף יום עסקים אחד לאחר מתן
@@ -123,16 +124,15 @@
 
                     <div class="bank-input-box">
                         <span class="selected-bank" id="SelectedBank">
-                            הוספת בנק<img class="selected-bank-img"
-                                src="assets/bank-logo/bankLogo.jpg" width="32px" height="32px" /></span>
+                            הוספת בנק<img class="selected-bank-img" src="assets/bank-logo/bankLogo.jpg" width="32px"
+                                height="32px" /></span>
                         <div class="bank-select-box" id="SelectBankBox">
                             <ul class="bank-list">
                                 <li class="BankHapoalim" id="BankHapoalim"><a><span>הפועלים(12)</span><img
-                                            src="/assets/bank-logo/hapoalim.png" width="32px"
-                                            height="auto" /></a>
+                                            src="/assets/bank-logo/hapoalim.png" width="32px" height="auto" /></a>
                                 </li>
-                                <li class="BankLeumi" id="BankLeumi"><a>(10)בנק לאומי<img src="assets/bank-logo/leumi.jpg"
-                                            width="32px height=" auto" /></a></li>
+                                <li class="BankLeumi" id="BankLeumi"><a>(10)בנק לאומי<img
+                                            src="assets/bank-logo/leumi.jpg" width="32px height=" auto" /></a></li>
                                 <li class="IsraelDiscountBank" id="IsraelDiscountBank"><a>(11)ישראל דיסקונט<img
                                             src="assets/bank-logo/IsraeliDiscont.jpg" width="32px height=" auto" /></a>
                                 </li>
@@ -141,9 +141,11 @@
                                 </li>
                                 <li class="FirstInternationalBankOfIsrael" id="FirstInternationalBankOfIsrael">
                                     <a>(31)הבנק הראשון של ישראל<img src="assets/bank-logo/FirstInternational.jpg"
-                                            width="32px height=" auto" /></a></li>
-                                <li class="MercantileDiscountBank" id="MercantileDiscountBank"><a>(17)מרכנתיל דיסקונט<img
-                                            src="assets/bank-logo/Merchantile.jpg" width="32px height=" auto" /></a>
+                                            width="32px height=" auto" /></a>
+                                </li>
+                                <li class="MercantileDiscountBank" id="MercantileDiscountBank"><a>(17)מרכנתיל
+                                        דיסקונט<img src="assets/bank-logo/Merchantile.jpg" width="32px height="
+                                            auto" /></a>
                                 </li>
                                 <li class="BankOtsarHaHayal" id="BankOtsarHaHayal"><a>(14)אוצר החייל<img
                                             src="assets/bank-logo/OtsarHayal.jpg" width="32px height=" auto" /></a></li>
@@ -168,6 +170,7 @@
 
                     </div>
 
+                    <!--
                     <div class="limit-access-checkbox-box">
                         <label class="form-check-label" for="unlimitedAccess">בחירה בהרשאה כללית, שאינה כוללת
                             הגבלות</label>
@@ -185,17 +188,17 @@
                             <span class="spanw50 datetime-spawn">:מועד פקיעת תוקף ההרשאה ביום</span>
                         </div>
                     </div>
-
+                    -->
 
 
                     <div class="open-signature-pad">
                         <button class="btn btn-success btn-sm sigmature-pad-open-button"
-                            id="signaturePadOpenButton">חתימה הלקוח</button>
+                            id="signaturePadOpenButton"><i class="fas fa-signature"></i> חתימה הלקוח</button>
                     </div>
 
 
                     <div class="submitButtonGroup">
-                        <button class="btn btn-success btn-sm" id="submit">שלח טופס</button>
+                        <button class="btn btn-success btn-sm" id="submit"><i class="fas fa-paper-plane"></i> שלח טופס</button>
                     </div>
 
                 </div>
@@ -208,18 +211,14 @@
                             <canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
                         </div>
                         <div class="signatureButtonGroup">
-                            <button class="btn btn-success btn-sm" id="signatureSaveButton">שמור חתימה</button>
-                            <button class="btn btn-success btn-sm" id="signatureClearButton">נקה חתימה</button>
+                            <button class="btn btn-success btn-sm" id="signatureSaveButton"><i class="far fa-check-square"></i> שמור חתימה</button>
+                            <button class="btn btn-success btn-sm" id="signatureClearButton"><i class="fas fa-eraser"></i> נקה חתימה</button>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-
-
-
-
     </div>
     <script src="script.js"></script>
 </body>
