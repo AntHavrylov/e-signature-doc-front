@@ -394,18 +394,18 @@ $(document).ready(function () {
         }
 
 
+        // check if amount money field has any letter and isn't empty
+        if (
+            moneyAmountInput.value.match(regexAnyLetterExistance) ||
+            moneyAmountInput.value.toString().trim().length < 1) {
+            alert("בבקשה נא להכניס סכום החיוב במספרים");
+            return;
+        }
 
         /* if (!limitedAccessCheckbox.checked) {
             //set unlimited access
             requestData.unlimitedAccess = false;
 
-            // check if amount money field has any letter and isn't empty
-            if (
-                moneyAmountInput.value.match(regexAnyLetterExistance) ||
-                moneyAmountInput.value.toString().trim().length < 1) {
-                alert("בבקשה נא להכניס סכום החיוב במספרים");
-                return;
-            }
 
             //check date that latter than today
             let validDate = checkDate(datepickerInput.value);
@@ -448,11 +448,11 @@ $(document).ready(function () {
 
 
 
-
+        //debugger
         requestData.fullNameInput = fullNameInput.value;
         requestData.idNumberInput = idNumberInput.value.match(regexId);
         requestData.moneyAmountInput = moneyAmountInput.value;
-        requestData.datepickerInput = datepickerInput.value;
+        //requestData.datepickerInput = datepickerInput.value;
         requestData.selectedBank = selectedBankValue;
         requestData.bankBranchInput = bankBranchInput.value;
         requestData.bankAccountInput = bankAccountInput.value;
